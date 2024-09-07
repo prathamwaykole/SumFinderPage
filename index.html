@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Sum Finder Page</title>
+<style>
+*{font-size:50px;}
+body{background-color:azure;}
+</style>
+<body>
+<center>
+<h1> Sum Finder Page</h1>
+<form onsubmit = "sum()">
+<input type="number" id="num" placeholder="Enter any Number"/>
+</br></br>
+<input type="submit"  value="M1"/>
+<input type="submit"  value="M2"/>
+</form>
+<h2 id="msg">
+<script>
+function sum()
+{   
+event.preventDefault();
+let num1 = document.getElementById("num");
+let msg = document.getElementById("msg");
+let action = document.activeElement.value;
+
+if(num.value==="")
+{
+alert("please enter the number");
+msg.innerHTML="";
+num.focus();
+return;
+}
+let n = parseInt(num.value);
+if(n<0)
+{
+alert("minimum interger should be greater than 0");
+msg.innerHTML="";
+num.focus();
+return;
+}
+
+let ans ="";
+if(action === "M1")
+{
+let i=1 ,sum=0;
+while(i<=n)
+{
+sum=sum+i;
+i++;
+}
+msg.innerHTML="sum="+sum;
+}
+else (action === "M2")
+{
+let i=1,sum=0;
+do
+{
+sum=sum+i;
+i++;
+}
+while(i<n)
+msg.innerHTML="sum="+sum;
+}
+}
+</script>
+</center>
+</body>
+</html>
